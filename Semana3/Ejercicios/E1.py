@@ -3,6 +3,8 @@
 # comparando los maximos de cada parte 
 # con recursividad.
 
+import random as r
+
 def maximo(arr, i, j):
     # En caso de que el arreglo tenga un solo elemento
     if i == j:
@@ -13,6 +15,8 @@ def maximo(arr, i, j):
         max2 = maximo(arr, m + 1, j)
         return max(max1, max2)
 
-    
-A = [1, 19, 45, 10, 23]
+
+# Generar un arreglo de 10 elementos
+A = [r.randint(0, 100) for i in range(10)]
+print(A)
 print(maximo(A, 0, len(A) - 1))
