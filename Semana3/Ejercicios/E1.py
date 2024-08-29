@@ -1,7 +1,10 @@
-# Maximo de un arreglo de enteros, 
-# dividiendo el arreglo en dos partes y 
-# comparando los maximos de cada parte 
-# con recursividad.
+"""
+Maximo de un arreglo de enteros, 
+dividiendo el arreglo en dos partes y 
+comparando los maximos de cada parte 
+con recursividad.
+
+"""
 
 import random as r
 
