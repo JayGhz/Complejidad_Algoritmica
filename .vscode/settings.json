@@ -1,0 +1,5 @@
+{
+    "symbols.files.associations": {
+        "*.txt": "text",
+    }
+}
