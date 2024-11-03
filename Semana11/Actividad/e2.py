@@ -1,4 +1,7 @@
 import math
+import numpy as np
+
+G = []
 
 def findAugmentingPath(G, s, t):
     n = len(G)
@@ -20,6 +23,10 @@ def findAugmentingPath(G, s, t):
     bottleNeck = dfs(s, math.inf)
 
     return augPath, bottleNeck
+
+
+n = len(G)
+G1 = np.full((n, n), np.nan)
 
 
 def fordFulkerson(G, s, t):
