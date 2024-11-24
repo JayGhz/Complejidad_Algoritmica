@@ -1,7 +1,7 @@
 import random
 import numpy as np
 
-import utils.disjointset as ds
+import utils.disjoinset as ds
 
 def makeMaze(rows, cols: int):
     maze = np.zeros((rows*2 + 1, cols*2+1))
