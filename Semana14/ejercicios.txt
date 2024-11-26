@@ -1,0 +1,90 @@
+// Ejercicio  xi <- xj / c
+x_i := 0;
+WHILE x_j >= c DO
+    x_j := x_j - c;
+    x_i := x_i + 1;
+END;
+
+
+// Ejercicio xi <- xj % c
+WHILE x_j >= c DO
+    x_j := x_j - c;
+END;
+x_i := x_j;
+
+
+// Ejercicio xi <- xj and xk
+IF x_j = 1 THEN
+    IF x_k = 1 THEN
+        x_i := 1;
+    ELSE
+        x_i := 0;
+    END;
+ELSE
+    x_i := 0;
+END;
+
+// Ejercicio xi <- xj or xk
+IF x_j = 1 THEN
+    x_i := 1;
+ELSE
+    IF x_k = 1 THEN
+        x_i := 1;
+    ELSE
+        x_i := 0;
+    END;
+END;
+
+
+// Ejercicio xi <- x2j (potencia de 2)
+x_i := 0;
+x_k := x_j;
+WHILE x_k > 0 DO
+    x_i := x_i + x_j;
+    x_k := x_k - 1;
+END;
+
+
+// Ejercicio xi <- xcj (potencia genral)
+x_i := 1;
+x_k := c;
+WHILE x_k > 0 DO
+    x_i := x_i * x_j;
+    x_k := x_k - 1;
+END;
+
+
+// Ejercicio xi <- xj! (factorial)
+x_i := 1;
+WHILE x_j > 1 DO
+    x_i := x_i * x_j;
+    x_j := x_j - 1;
+END;
+
+
+// Fibonacci
+x_i := 0;
+x_j := 1;
+x_k := n;  // número de términos a generar
+WHILE x_k > 1 DO
+    x_l := x_i + x_j; // siguiente término
+    x_i := x_j;
+    x_j := x_l;
+    x_k := x_k - 1;
+END;
+
+
+// Ejercicio FOR i <- 1 TO C DO P
+x_i := 1;
+WHILE x_i <= C DO
+    P; // ejecuta el programa
+    x_i := x_i + 1;
+END;
+
+
+// Ejercicio IF x = 0 THEN P
+x_i := 0;
+WHILE x = 0 DO
+    P; // ejecuta el programa
+    x := 1; // rompe el bucle
+END;
