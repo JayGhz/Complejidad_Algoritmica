@@ -3,19 +3,19 @@ import math
 import heapq
 
 
-def show(G, labels=[], directed=False, weighted=False, path=[], layout='sfdp'):
-    graph = gv.Digraph('felicidad') if directed else gv.Graph('alegria')
-    graph.format = 'svg'
-    graph.graph_attr['layout'] = layout
-    graph.edge_attr['color'] = 'gray'
-    graph.node_attr['color'] = 'orangered'
-    graph.node_attr['width'] = '0.1'
-    graph.node_attr['height'] = '0.1'
-    graph.node_attr['fontsize'] = '8'
-    graph.node_attr['fontcolor'] = 'mediumslateblue'
-    graph.node_attr['fontname'] = 'monospace'
-    graph.edge_attr['fontsize'] = '8'
-    graph.edge_attr['fontname'] = 'monospace'
+def show(G, labels=[], directed=False, weighted=False, path=[], layout="sfdp"):
+    graph = gv.Digraph("felicidad") if directed else gv.Graph("alegria")
+    graph.format = "svg"
+    graph.graph_attr["layout"] = layout
+    graph.edge_attr["color"] = "gray"
+    graph.node_attr["color"] = "orangered"
+    graph.node_attr["width"] = "0.1"
+    graph.node_attr["height"] = "0.1"
+    graph.node_attr["fontsize"] = "8"
+    graph.node_attr["fontcolor"] = "mediumslateblue"
+    graph.node_attr["fontname"] = "monospace"
+    graph.edge_attr["fontsize"] = "8"
+    graph.edge_attr["fontname"] = "monospace"
     n = len(G)
     for i, lbl in enumerate(labels):
         graph.node(str(i), lbl)
@@ -27,13 +27,13 @@ def show(G, labels=[], directed=False, weighted=False, path=[], layout='sfdp'):
                 for vi, w in G[u]:
                     if vi == v:
                         break
-                graph.edge(str(u), str(v), str(w), dir='forward',
-                           penwidth='2', color='orange')
+                graph.edge(
+                    str(u), str(v), str(w), dir="forward", penwidth="2", color="orange"
+                )
             else:
-                graph.edge(str(u), str(v), dir='forward',
-                           penwidth='2', color='orange')
-            added.add(f'{u},{v}')
-            added.add(f'{v},{u}')
+                graph.edge(str(u), str(v), dir="forward", penwidth="2", color="orange")
+            added.add(f"{u},{v}")
+            added.add(f"{v},{u}")
     for u in range(n):
         for edge in G[u]:
             w = 0
@@ -42,12 +42,12 @@ def show(G, labels=[], directed=False, weighted=False, path=[], layout='sfdp'):
             else:
                 v = edge
             draw = False
-            if not directed and f'{u},{v}' not in added:
-                added.add(f'{u},{v}')
-                added.add(f'{v},{u}')
+            if not directed and f"{u},{v}" not in added:
+                added.add(f"{u},{v}")
+                added.add(f"{v},{u}")
                 draw = True
-            elif directed and f'{u},{v}' not in added:
-                added.add(f'{u},{v}')
+            elif directed and f"{u},{v}" not in added:
+                added.add(f"{u},{v}")
                 draw = True
             if draw:
                 if weighted:

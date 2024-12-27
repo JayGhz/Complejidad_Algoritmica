@@ -1,6 +1,6 @@
 class DisjointSet:
     def __init__(self, n):
-        self.s = [-1]*n
+        self.s = [-1] * n
 
     def find(self, a):
         if self.s[a] < 0:
