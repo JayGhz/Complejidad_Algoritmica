@@ -8,6 +8,7 @@ con recursividad.
 
 import random as r
 
+
 def maximo(arr, i, j):
     # En caso de que el arreglo tenga un solo elemento
     if i == j:
